@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Password Cracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="file"],
+        input[type="number"],
+        input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <h1>PDF Password Cracker</h1>
+        
+        <label>Upload PDF File:</label>
+        <input type="file" name="pdf_file" required><br><br>
+        
+        <label><input type="checkbox" name="use_lower"> Use Lowercase Letters</label>
+        <label><input type="checkbox" name="use_upper"> Use Uppercase Letters</label>
+        <label><input type="checkbox" name="use_digits"> Use Digits</label>
+        <label><input type="checkbox" name="use_special"> Use Special Characters</label>
+        
+        <label>Password Length From:</label>
+        <input type="number" name="length_from" min="1" required><br><br>
+        
+        <label>Password Length To:</label>
+        <input type="number" name="length_to" min="1" required><br><br>
+        
+        <input type="submit" value="Start Cracking">
+    </form>
+</body>
+</html>
